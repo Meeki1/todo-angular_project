@@ -28,5 +28,4 @@ export class DataHandlerService {
     const tasks = TestData.tasks.filter(task => task.category === category);
     this.taskSubject.next(tasks);
   }
-
 }

@@ -10,11 +10,15 @@ import { Task } from 'src/app/model/Task';
 export class TasksComponent implements OnInit {
 
   tasks: Task[];
+  completedTask : Task;
 
   constructor(private dataHandler: DataHandlerService) { }
 
   ngOnInit() {
-
     this.dataHandler.taskSubject.subscribe( tasks => this.tasks = tasks);
+  }
+
+  toggleTaskCompleted(task: Task) {
+    task.completed = !task.completed;
   }
 }
